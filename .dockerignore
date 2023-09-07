@@ -1,0 +1,11 @@
+**/node_modules
+**/.git
+**/terraform
+**/.scannerwork
+
+Jenkinsfile
+sonar-project.properties
+README.md
+.gitignore
+deployment.yaml
+package-lock.json
