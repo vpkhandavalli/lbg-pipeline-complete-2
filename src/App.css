@@ -16,6 +16,11 @@ h1 {
     color: maroon;
 }
 
+h3 { 
+  color: slategray;
+}
+
 body  {
   padding: 10px;
+  background-color: white;
 }
