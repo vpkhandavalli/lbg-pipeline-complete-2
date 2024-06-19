@@ -11,19 +11,19 @@ function App() {
   const [vatRate, setVatRate] = useState(20.0);
 
   const handleNetPriceChange = (price) => {
-    const gross_price = price * ((vatRate / 100) + 1);
-    setNetPrice(price);
-    setGrossPrice(gross_price);
-    setVatToPay(gross_price - price);
-  };
+    const gross_price = (price * ((vatRate / 100) + 1)).toFixed(2);
+    setNetPrice(parseFloat(price.toFixed(2)));
+    setGrossPrice(parseFloat(gross_price));
+    setVatToPay(parseFloat((gross_price - price).toFixed(2)));
+};
 
   const handleGrossPriceChange = (price) => {
-    const net_price = price / ((vatRate / 100) + 1);
-    setNetPrice(net_price);
-    setGrossPrice(price);
-    setVatToPay(price - net_price);
-  };
-
+    const net_price = (price / ((vatRate / 100) + 1)).toFixed(2);
+    setNetPrice(parseFloat(net_price));
+    setGrossPrice(parseFloat(price.toFixed(2)));
+    setVatToPay(parseFloat((price - net_price).toFixed(2)));
+};
+  
   const handleVatRateChanged = (rate) => {
     setVatRate(rate);
     updatePrices();
